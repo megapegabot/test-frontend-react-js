@@ -1,0 +1,5 @@
+.ansible/roles
+/test
+inv.json
+gitlab-runner
+.__pycache__
