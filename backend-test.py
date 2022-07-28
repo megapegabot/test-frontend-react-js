@@ -8,6 +8,7 @@ import json
 from datetime import datetime
 from functools import wraps
 
+
 app = Flask(__name__)
 
 TOKEN_API = 'KLJ3fedchbjn*&DN+fdsbnmljhnkjh'
@@ -34,6 +35,10 @@ note_list = [{
     'color': '#F00000',
 }]
 
+@app.after_request
+def add_header(response):
+    response.headers['Access-Control-Allow-Origin'] = '*'
+    return response
 
 def token_required(func):
     @wraps(func)
